@@ -2,7 +2,7 @@ package com.bridgelabzassignment.InvoiceGenerator;
 
 /**
  * The class Invoice Generator is used to generate invoices to cabs.
- * @author sanjana.rao_ymediala
+ * @author Sanjana Rao
  * @since 25-09-2021
  */
 public class InvoiceGenerator 
@@ -26,14 +26,19 @@ public class InvoiceGenerator
 			totalFare = 5.0;
 		return totalFare;
 	}
-
-	public double calculateTotalFare(Ride[] rides) 
+	
+	/**
+	 * The method calculateTotalFare calculates the total Fare for the rides
+	 * @param rides takes in array of rides taken
+	 * @return InvoiceSummary, the class
+	 */
+	public InvoiceSummary calculateTotalFare(Ride[] rides) 
 	{
 		double totalFare = 0.0;
 		for (Ride ride : rides) 
 		{
 			totalFare += this.calculateTotalFare(ride.distance, ride.time);
 		}
-		return totalFare;
+		return new InvoiceSummary(rides.length, totalFare);
 	}
 }
