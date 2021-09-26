@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class InvoiceGeneratorTest 
 {
-	@SuppressWarnings("deprecation")
 	@Test
 	public void givenDistanceAndTime_ShouldReturnTotalFare()
 	{
